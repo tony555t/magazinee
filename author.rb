@@ -1,5 +1,3 @@
-
-class Author
     class Author
         attr_reader :name
       
@@ -21,6 +19,10 @@ class Author
       
         def articles
           @contributions
+        end
+
+        def topic_areas
+            magazines.flat_map { |magazine| magazine.categories }.uniq
         end
       
         def magazines
@@ -57,7 +59,25 @@ class Author
       
         def contributors
           authors
+
         end
+        def article_titles
+            articles.map(&:title)
+          end
+        
+          def articles
+            Article.all.select { |article| article.magazine == self }
+          end
+          def contributing_authors
+            author_counts = Hash.new(0)
+            articles.each { |article| author_counts[article.author] += 1 }
+            author_counts.select { |author, count| count > 2 }.keys
+          end
+        
+          def articles
+            Article.all.select { |article| article.magazine == self }
+          end
+
       end
       
 
@@ -72,16 +92,29 @@ class Article
             @magazine = magazine
             @title = title
             @@all << self
-    end
+        end
     def self.all
         @@all
     end
     def author
         @author
-      end
+    end
     
       def magazine
         @magazine
       end
-    end
-       
+end
+#creating author
+    author1=Author.new("jac")
+    author2= Author.new(" ann")
+puts author1
+puts author2
+# creating magazine
+magazineee1=Magazine.new("Kenya Time","political")
+magazineee2=Magazine.new("Taifa leo","sports")
+puts magazineee1.name
+puts magazineee2.name 
+puts magazineee1.category
+puts magazineee2.category
+
+
