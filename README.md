@@ -60,5 +60,10 @@ contributing_authors - returns an array of authors who have written more than 2 
 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-License
-The project is available as open source under the terms of the MIT License.
+.
+# Technologies used
+HTML5 2.CSS 3.JavaScript 4.react
+
+# Author and License
+"author": "antony tula", "license": "ISC", "bugs": 
+
