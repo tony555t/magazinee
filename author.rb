@@ -22,7 +22,7 @@
         end
 
         def topic_areas
-            magazines.flat_map { |magazine| magazine.categories }.uniq
+            magazines.flat_map { |magazine| magazine.category }.uniq
         end
       
         def magazines
@@ -40,6 +40,8 @@
           @name = name
           @category = category
           @authors = []
+          @@all << self
+
         end
       
         def add_article(article)
@@ -108,9 +110,11 @@ end
     author1=Author.new("jac")
     author2= Author.new(" ann")
     author3= Author.new(" mac")
+    author4= Author.new("mic")
 puts author1
 puts author2
 puts author3
+puts author4
 
 # creating magazine
 magazineee1=Magazine.new("Kenya Time","political")
@@ -123,8 +127,19 @@ puts magazineee2.category
 
 #adding articles
 article1=author1.add_article(magazineee1,"election year")
-article2=author2.add_article(magazineee1,"election year")
+article2=author2.add_article(magazineee2,"election year")
 article3=author3.add_article(magazineee1,"election year") 
+article3=author4.add_article(magazineee1,"election year") 
+
+
+#topic
+
+puts author2.topic_areas
+puts author4.topic_areas
 
 #
+magazine=Magazine.find_by_name("Taifa leo")
+puts magazine.name
+
+
 
