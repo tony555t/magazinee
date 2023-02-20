@@ -107,8 +107,11 @@ end
 #creating author
     author1=Author.new("jac")
     author2= Author.new(" ann")
+    author3= Author.new(" mac")
 puts author1
 puts author2
+puts author3
+
 # creating magazine
 magazineee1=Magazine.new("Kenya Time","political")
 magazineee2=Magazine.new("Taifa leo","sports")
@@ -117,4 +120,11 @@ puts magazineee2.name
 puts magazineee1.category
 puts magazineee2.category
 
+
+#adding articles
+article1=author1.add_article(magazineee1,"election year")
+article2=author2.add_article(magazineee1,"election year")
+article3=author3.add_article(magazineee1,"election year") 
+
+#
 
