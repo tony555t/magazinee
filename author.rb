@@ -137,9 +137,15 @@ article3=author4.add_article(magazineee1,"election year")
 puts author2.topic_areas
 puts author4.topic_areas
 
-#
+#magazine by name
 magazine=Magazine.find_by_name("Taifa leo")
 puts magazine.name
+
+# Output: ["The History of Baseball"]
+puts magazine1.article_titles
+
+puts magazine1.contributing_authors.map { |author| author.name }
+# Output: ["John Smith"]
 
 
 
