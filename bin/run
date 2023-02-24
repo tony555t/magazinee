@@ -40,10 +40,9 @@ magazine=Magazine.find_by_name("Taifa leo")
 puts magazine.name
 
 # Output: ["The History of Baseball"]
-puts magazine1.article_titles
-
-puts magazine1.contributing_authors.map { |author| author.name }
-# Output: ["John Smith"]
+puts magazine.article_titles
+  # Filter out authors who have written less than 2 articles
+  author_counts.select { |author, count| count > 2 }.keys
 
 
 
